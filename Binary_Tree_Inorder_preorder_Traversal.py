@@ -85,6 +85,34 @@ class Solution:
 
 
 
+#preorder 递归：
+
+class Solution:
+    # @param root, a tree node
+    # @return a list of integers
+    def iterative_preorder(self, root, list):
+        stack = []
+        while root or stack:
+            if root:
+                list.append(root.val)
+                stack.append(root)
+                root = root.left
+            else:
+                root = stack.pop()
+                root = root.right
+        return list
+
+    def recursive_preorder(self, root, list):
+        if root:
+            list.append(root.val)
+            self.preorder(root.left,list)
+            self.preorder(root.right,list)
+
+    def preorderTraversal(self,root):
+        list = []
+        self.iterative_preorder(root,list)
+        return list
+
 '''
 非递归方式等代码： and  http://www.jianshu.com/p/49c8cfd07410  and http://www.cnblogs.com/dolphin0520/archive/2011/08/25/2153720.html
 /*二叉树的遍历* 2011.8.25*/

@@ -9,7 +9,7 @@ class tree_node(object):
 
 def construct_tree(root,edges):
     if root ==None:
-        return None
+        return
     for i in range(len(edges)):
         if edges[i][0] == root.value:
             if root.left ==None:
@@ -66,6 +66,13 @@ def tree_size(root,list_vertex):
         elif root.right!=None and root.left==None :
             tree_size(root.right,list_vertex)
 
+def read_edges_list(file_string):
+    for line in open(file_string):
+        line.split(" ")
+
+#读文件
+#根节点不是一的构建树
+#树中找到一个数的size
 
 
 
